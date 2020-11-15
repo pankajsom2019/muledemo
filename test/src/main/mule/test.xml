@@ -20,5 +20,7 @@ output application/java
 			</ee:message>
 		</ee:transform>
 	</flow>
-	<sub-flow name="testSub_Flow" doc:id="d3122443-13ce-4e0e-8ae7-45f48dc145a6" />
+	<sub-flow name="testSub_Flow" doc:id="d3122443-13ce-4e0e-8ae7-45f48dc145a6" >
+		<logger level="INFO" doc:name="Logger" doc:id="2ea7531e-ad60-450e-83b2-5fdaf7461b13" />
+	</sub-flow>
 </mule>
