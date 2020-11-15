@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="testFlow" doc:id="b0631a92-3b70-4e0c-bf42-c8a718702a08" >
+		<http:listener doc:name="Listener" doc:id="ef62ae32-9374-42fe-87a9-5e512970e994" />
+		<ee:transform doc:name="Transform Message" doc:id="4356be54-c77c-4964-9eb3-660816785b23" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<async doc:name="Async" doc:id="3bafed0c-4475-4902-9c17-c341a506a077" >
+			<flow-ref doc:name="Flow Reference" doc:id="ea57b4df-143f-456b-a92b-02c6d584a149" />
+		</async>
+	</flow>
+	<sub-flow name="testSub_Flow" doc:id="d3122443-13ce-4e0e-8ae7-45f48dc145a6" />
+</mule>
